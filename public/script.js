@@ -133,3 +133,4 @@ document.getElementById('cancel-delete').onclick = function () {
 };
 
 loadProducts();
+
