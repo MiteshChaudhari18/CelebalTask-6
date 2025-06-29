@@ -21,3 +21,5 @@ The backend uses MongoDB with Mongoose for storing products.
  Requirement satisfied:
 
 “Create a RESTful API using Node.js and Express that supports basic CRUD operations on a resource.”
+
+Images are added preview 1.png   preview 2.png in the repo 
