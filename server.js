@@ -6,13 +6,12 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-
 mongoose.connect('mongodb://127.0.0.1:27017/product-management', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log(' MongoDB Connected'))
-.catch(err => console.error(' MongoDB Connection Error:', err));
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.error('MongoDB Connection Error:', err));
 
 const productSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -20,7 +19,6 @@ const productSchema = new mongoose.Schema({
   price: { type: Number, required: true }
 });
 const Product = mongoose.model('Product', productSchema);
-
 
 app.use(cors());
 app.use(express.json());
@@ -72,11 +70,11 @@ app.delete('/api/products/:id', async (req, res) => {
   }
 });
 
-
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
-  console.log(` Server running at http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
+
