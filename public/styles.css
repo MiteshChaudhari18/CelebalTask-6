@@ -1,0 +1,48 @@
+
+body {
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #1f2937;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(8px); 
+  z-index: 0; 
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+.loader {
+  border-top-color: #abab0f; 
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+form,
+#products-list {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5rem;
+}
+
+#toast {
+  transition: opacity 0.3s ease;
+}
